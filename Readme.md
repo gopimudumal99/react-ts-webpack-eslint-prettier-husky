@@ -125,3 +125,18 @@ Step 14
 - for svg file added inside the src and import the app
 - add type declaration in declaration.d.ts declare module '\*.svg'
 - for webpack 5 have type is' asset/inline' (this type used for Fonts and svg's)
+
+- ***configure webpack for multiple environments***
+  step1 : rename the webpack.config.js into webpack.common.js and remove mode key in that file
+  step2 : 3 extra files added into webpack folder i.e.., webpack.dev.js, webpack.prod.js, webpack.config.js
+  step3 : webpack.dev.js --< this specific for dev environment > adding dev and prod configuration
+  step4 : we need merge webpack file so we need to install another package
+  `yarn add -D webpack-merge`
+  step 5: import webpack merge inside webpack.config.js file and module.export as function and take parms of envVars and return the merge of webpack.common.js with envVars webpack('prod' or 'dev')
+    
+  step6 : in package.json scripts add like ``"start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",``
+  ``"build": "webpack serve --config webpack/webpack.config.js --env env=prod --open",``
+
+  step7: we can also define out own environment variables 
+  - add own variables  in dev and prod.js
+  - ``cd build/`` and ``npx serve``
