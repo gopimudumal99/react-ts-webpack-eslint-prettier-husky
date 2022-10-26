@@ -126,43 +126,53 @@ Step 14
 - add type declaration in declaration.d.ts declare module '\*.svg'
 - for webpack 5 have type is' asset/inline' (this type used for Fonts and svg's)
 
-- ***configure webpack for multiple environments***
+- **_configure webpack for multiple environments_**
   step1 : rename the webpack.config.js into webpack.common.js and remove mode key in that file
   step2 : 3 extra files added into webpack folder i.e.., webpack.dev.js, webpack.prod.js, webpack.config.js
   step3 : webpack.dev.js --< this specific for dev environment > adding dev and prod configuration
   step4 : we need merge webpack file so we need to install another package
   `yarn add -D webpack-merge`
   step 5: import webpack merge inside webpack.config.js file and module.export as function and take parms of envVars and return the merge of webpack.common.js with envVars webpack('prod' or 'dev')
-    
-  step6 : in package.json scripts add like ``"start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",``
-  ``"build": "webpack --config webpack/webpack.config.js --env env=prod --open",``
 
-  step7: we can also define out own environment variables 
-  - add own variables  in dev and prod.js
-  - ``cd build/`` and ``npx serve``
+  step6 : in package.json scripts add like `"start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",`
+  `"build": "webpack --config webpack/webpack.config.js --env env=prod --open",`
 
-***React refresh feature***
+  step7: we can also define out own environment variables
+
+  - add own variables in dev and prod.js
+  - `cd build/` and `npx serve`
+
+**_React refresh feature_**
+
 - add counter component in app.tsx file
-- if click counter the value increases 
+- if click counter the value increases
 - but if suppose any text change in app.tsx file then
 - webpack detect the change and browser will be reloads witch causes the countComponent lose its state
-- ``yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh``
-step1: in webpack.dev.js  set devServer:{Hot: true} -> this enable hot module replacement in webpack.
-     //Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload.
+- `yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh`
+  step1: in webpack.dev.js set devServer:{Hot: true} -> this enable hot module replacement in webpack.
+  //Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload.
 
-
-***ESLINT Configuration***
-Eslint : it is tool identifying and reporting problematic patterns found in js code 
+**_ESLINT Configuration_**
+Eslint : it is tool identifying and reporting problematic patterns found in js code
 eslint catches errors while typing the code
-``yarn add -D eslint``
-``yarn add -D eslint-plugin-react eslint-plugin-react-hooks``
-``yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin``
-``yarn add -D eslint-plugin-import`` *(support es6 plus import and export syntax and prevent issues miss spelling of file path and import names) 
-``eslint-plugin-jsx-a11y`` *(add accessability stands in your application in real time)
+`yarn add -D eslint`
+`yarn add -D eslint-plugin-react eslint-plugin-react-hooks`
+`yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin`
+`yarn add -D eslint-plugin-import` _(support es6 plus import and export syntax and prevent issues miss spelling of file path and import names)
+`eslint-plugin-jsx-a11y` _(add accessability stands in your application in real time)
 
-***Prettier configuration***
+**_Prettier configuration_**
 step1: instal prettier in vsCode
-``yarn add -D prettier eslint-config-prettier eslint-plugin-prettier``
+`yarn add -D prettier eslint-config-prettier eslint-plugin-prettier`
+
 - prettier -> core library
 - eslint-config-prettier -> disabled eslint rules that is conflict with prettier
 - eslint-plugin-prettier -> which runs prettier as eslint rule
+
+**husky**
+
+- to ensure all files committed don't have to lint and prettier error so we use package lint-staged and husky
+step1: `yarn add -D husky lint-staged`
+step2: specify the *link stage* configuration in package.json
+step3: add husky stage configuration 
+  

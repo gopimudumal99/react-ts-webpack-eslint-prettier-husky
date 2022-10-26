@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import ClickCounter from './ClickCounter';
 
 export const App = () => {
+  const formatName = "Gopi"
   return (
     <>
       <h1>
