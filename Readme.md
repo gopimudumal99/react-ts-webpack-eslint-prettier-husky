@@ -135,8 +135,10 @@ Step 14
   step 5: import webpack merge inside webpack.config.js file and module.export as function and take parms of envVars and return the merge of webpack.common.js with envVars webpack('prod' or 'dev')
     
   step6 : in package.json scripts add like ``"start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",``
-  ``"build": "webpack serve --config webpack/webpack.config.js --env env=prod --open",``
+  ``"build": "webpack --config webpack/webpack.config.js --env env=prod --open",``
 
   step7: we can also define out own environment variables 
   - add own variables  in dev and prod.js
   - ``cd build/`` and ``npx serve``
+
+***React refresh feature***
