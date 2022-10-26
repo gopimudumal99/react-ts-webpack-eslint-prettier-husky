@@ -176,3 +176,7 @@ step1: `yarn add -D husky lint-staged`
 step2: specify the *link stage* configuration in package.json
 step3: add husky stage configuration 
   
+**some new**
+- ``yarn add -D @babel/runtime @babel/plugin-transform-runtime`` (it helps to do async await thing react)
+- ``yarn add -D copy-webpack-plugin``  to copy static assets into a build folder
+- ``yarn add -D webpack-bundle-analyzer`` helps to visualize the webpack output files and sizes of the different files generated after the build

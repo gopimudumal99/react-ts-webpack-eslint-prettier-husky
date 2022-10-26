@@ -3,5 +3,14 @@
     "@babel/preset-env",
     ["@babel/preset-react", { "runtime": "automatic" }],
     "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      // this plugin enables async await feature in react app
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
   ]
 }
