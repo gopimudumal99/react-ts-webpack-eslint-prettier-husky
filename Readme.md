@@ -103,4 +103,25 @@ STEP 11.
 
 - add scripts in package.json "start": "webpack serve --config webpack/webpack.config.js --open"
 - webpack/webpack.config.js -> config file inside webpack folder named webpack.config.js
-- --open flag means directly open in browser if webpack compile successfully 
+- --open flag means directly open in browser if webpack compile successfully
+
+STEP 13
+
+- styles.css file inside src folder
+- yarn start run cmd and through error webpack don't no have a loader to load css files
+- `yarn add -D css-loader style-loader` these are two loader require run css file through webpack
+- add modules rule css-loader and style-loader use
+- run yarn start
+
+Step 14
+
+- add png file inside the scr folder and import into app.tsx file
+- you find some error due we need to declare types of png bcz of typescript
+- add file declaration.d.ts in src folder
+- add code as declare module "\*.png"; in declaration.d.ts file and error is gone form app.tsx file
+- add img tag and give the src to this png file
+- we need to install additional loader like file-loader but in webpack5 support that out of the box through assets modules
+- module rule given type : 'asset/resource'
+- for svg file added inside the src and import the app
+- add type declaration in declaration.d.ts declare module '\*.svg'
+- for webpack 5 have type is' asset/inline' (this type used for Fonts and svg's)
