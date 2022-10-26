@@ -150,3 +150,12 @@ Step 14
 step1: in webpack.dev.js  set devServer:{Hot: true} -> this enable hot module replacement in webpack.
      //Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload.
 
+
+***ESLINT Configuration***
+Eslint : it is tool identifying and reporting problematic patterns found in js code 
+eslint catches errors while typing the code
+``yarn add -D eslint``
+``yarn add -D eslint-plugin-react eslint-plugin-react-hooks``
+``yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin``
+``yarn add -D eslint-plugin-import`` *(support es6 plus import and export syntax and prevent issues miss spelling of file path and import names) 
+``eslint-plugin-jsx-a11y`` *(add accessability stands in your application in real time)
