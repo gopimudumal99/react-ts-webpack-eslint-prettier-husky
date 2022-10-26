@@ -57,12 +57,50 @@ STEP 8.
 - root.render(<React.StrictMode><App/></React.StrictMode>)
 
 STEP 9.
+
 - This react and typeScript code cannot read browser directly we need **babel** to convert react code into normal js code
 - install babel with necessity plugins
-- ``yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript``
+- `yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript`
 - once babel dev-dependency install then we need to add .babelrc configure file in root directory
 - add some code in .babelrc
 
-
 STEP 10.
-- webpack which is module bundler the code we write across multiple components will be bundle together by webpack which can be reference index.html
+
+- webpack which is module bundler the code we write across multiple components will be bundle together by webpack which can be reference index.html file
+- `yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin `
+- apart from this we also needed babel-loader package which allows transpiling javaScript files using babel and webpack
+- `yarn add -D babel-loader`
+
+STEP 11.
+
+- webpack configuration
+- add webpack named folder in root director
+- inside webpack folder add webpack.config.js file
+- add some code copy and paste
+- configuration is an Object have the entry point points to the index.ts file inside src folder
+- resolve extension property this config allows us to levave of file extension while importing
+- resolve:{extensions:['.tsx','.ts','js']}
+- webpack check first .tsx file its not resolved then check .ts file still not check js
+- webpack have **module** rule here saying webpack should use babel-loader for all .ts,.js,tsx,and jsx files excluding the node_modules folder
+- for output property we instruct the webpack bundle code please inside the file called bundle.js and bundle.js file please inside build folder
+- mode as 'development' which sets process.env and .node_env into development
+- plugin HtmlWebpackPlugin : is inject bundle.js file into the index.html file and paste that html file into build folder
+- ```module.exports={
+     entry:"",
+
+    resolve:{},
+
+    module:{},
+
+    output:{},
+
+    mode: "",
+
+    plugins:[]
+  ```
+
+} ```
+
+- add scripts in package.json "start": "webpack serve --config webpack/webpack.config.js --open"
+- webpack/webpack.config.js -> config file inside webpack folder named webpack.config.js
+- --open flag means directly open in browser if webpack compile successfully 
