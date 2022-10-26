@@ -6,7 +6,7 @@ import logo from './logo.svg';
 import ClickCounter from './ClickCounter';
 
 export const App = () => {
-  const flName = 'gio'
+  const fullName = "fkok"
   return (
     <>
       <h1>
