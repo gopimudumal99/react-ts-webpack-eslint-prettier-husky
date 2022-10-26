@@ -159,3 +159,10 @@ eslint catches errors while typing the code
 ``yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin``
 ``yarn add -D eslint-plugin-import`` *(support es6 plus import and export syntax and prevent issues miss spelling of file path and import names) 
 ``eslint-plugin-jsx-a11y`` *(add accessability stands in your application in real time)
+
+***Prettier configuration***
+step1: instal prettier in vsCode
+``yarn add -D prettier eslint-config-prettier eslint-plugin-prettier``
+- prettier -> core library
+- eslint-config-prettier -> disabled eslint rules that is conflict with prettier
+- eslint-plugin-prettier -> which runs prettier as eslint rule
