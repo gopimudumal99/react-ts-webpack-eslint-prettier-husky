@@ -142,3 +142,11 @@ Step 14
   - ``cd build/`` and ``npx serve``
 
 ***React refresh feature***
+- add counter component in app.tsx file
+- if click counter the value increases 
+- but if suppose any text change in app.tsx file then
+- webpack detect the change and browser will be reloads witch causes the countComponent lose its state
+- ``yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh``
+step1: in webpack.dev.js  set devServer:{Hot: true} -> this enable hot module replacement in webpack.
+     //Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload.
+
