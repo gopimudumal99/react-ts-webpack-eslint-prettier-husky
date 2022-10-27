@@ -15,6 +15,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   rules: {
+    semi: [1, 'always'],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-var-requires': 'off',
@@ -26,14 +27,6 @@ module.exports = {
   settings: {
     react: {
       version: 'detect',
-    },
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
     },
   },
 }
