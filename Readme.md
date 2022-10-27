@@ -172,14 +172,15 @@ step1: instal prettier in vsCode
 **husky**
 
 - to ensure all files committed don't have to lint and prettier error so we use package lint-staged and husky
-step1: `yarn add -D husky lint-staged`
-step2: specify the *link stage* configuration in package.json
-step3: add husky stage configuration 
-  
+  step1: `yarn add -D husky lint-staged`
+  step2: specify the _link stage_ configuration in package.json
+  step3: add husky stage configuration
+
 **some new**
-- ``yarn add -D @babel/runtime @babel/plugin-transform-runtime`` (it helps to do async await thing react)
-- ``yarn add -D copy-webpack-plugin``  to copy static assets into a build folder
-- ``yarn add -D webpack-bundle-analyzer`` helps to visualize the webpack output files and sizes of the different files generated after the build
+
+- `yarn add -D @babel/runtime @babel/plugin-transform-runtime` (it helps to do async await thing react)
+- `yarn add -D copy-webpack-plugin` to copy static assets into a build folder
+- `yarn add -D webpack-bundle-analyzer` helps to visualize the webpack output files and sizes of the different files generated after the build
 
 ```
 // "lint-staged": {
@@ -196,3 +197,11 @@ step3: add husky stage configuration
 //   }
 // }
 ```
+
+``
+// "lint": "eslint --fix \"./src/\**/*.{js,jsx,ts,tsx,json}\"",
+``
+
+***Husky configuration new***
+step 1 : yarn add -D husky
+step 2 : npx husky add .husky/pre-commit "yarn lint"
