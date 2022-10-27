@@ -180,3 +180,19 @@ step3: add husky stage configuration
 - ``yarn add -D @babel/runtime @babel/plugin-transform-runtime`` (it helps to do async await thing react)
 - ``yarn add -D copy-webpack-plugin``  to copy static assets into a build folder
 - ``yarn add -D webpack-bundle-analyzer`` helps to visualize the webpack output files and sizes of the different files generated after the build
+
+```
+// "lint-staged": {
+//   "src/**/*.{js,jsx,ts,tsx,json}": [
+//     "eslint --fix"
+//   ],
+//   "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+//     "prettier --write"
+//   ]
+// },
+// "husky": {
+//   "hooks": {
+//     "pre-commit": "lint-staged"
+//   }
+// }
+```
